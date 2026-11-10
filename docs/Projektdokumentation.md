@@ -48,7 +48,7 @@ Vi använder oss även av konstanter för gränsvärden istället för magic num
 
 ## **4 |** Arbetsprocess och versionshantering
 
-Vi använde oss av Git och GitHub för versionshantering och samarbete. Arbetet delades upp i issues och genomfördes i separata branches. Vi sparade mindre ändringar med beskrivande commits och använde oss av pull requests för att granska och sammanföra koden. Länk till vårat repository [Tärningsspelet](https://github.com/JenFal93/Tarningsspelet/).
+Vi använde oss av Git och GitHub för versionshantering och samarbete. Arbetet delades upp i issues och genomfördes i separata branches. Vi sparade mindre ändringar med beskrivande commits och använde oss av pull requests för att granska och sammanföra koden. Länk till vårt repository: [Tärningsspelet](https://github.com/JenFal93/Tarningsspelet/).
 
 ## **5 |** Testning och felsökning
 TODO: Skriv om kontrollering av validering genom att testa olika typer av inmatning (fel typ etc.)
