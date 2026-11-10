@@ -25,10 +25,16 @@ public class Player {
     }
 
     // Skapa en tärning med angivet antal sidor och tilldela den till spelaren 
+    public void addDie(int numberOfSides) {
+        this.die = new Die(numberOfSides); // Den här tärningen är en ny tärning med x antal sidor 
+    }
 
     // Rullar spelarens tärning 
 
     // Retunerar tärningens aktuella värde 
+    public int getDieValue() {
+        return die.getValue(); // Kallar på metoden getValue från Die-klassen 
+    }
 
     // Ökar spelarens poäng med +1 
 
