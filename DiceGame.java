@@ -64,7 +64,8 @@ public class DiceGame {
                 System.out.println("Incorrect guess. Better luck next round!");
             }
 
-            // TODO (Issue #3): Visa resultatet och spelarens poäng
+            // Visa resultatet och spelarens poäng
+            System.out.println("Player score: " + player.getScore());
         }
 
         // VIKTIGT: Stäng Scanner när spelet är färdigt eftersom ingen mer inmatning behövs
