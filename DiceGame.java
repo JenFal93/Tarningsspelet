@@ -29,8 +29,10 @@ public class DiceGame {
         String playerName = scanner.nextLine();
 
         // Skapa ett Player-objekt med spelarens namn (använd konstruktorn från Player.java)
+        Player player = new Player(playerName); // anropar konstruktorn och skickar med namnet
 
-        // Tilldela spelaren en tärning (anropa addDie() med det angivna antalet sidor)
+        // Tilldela spelaren en tärning
+        player.addDie(numberOfSides); // anropa addDie() med det angivna antalet sidor
 
         // Skapa en loop som körs lika många gånger som antalet omgångar
         // Implementera spellogiken i Issue #3
