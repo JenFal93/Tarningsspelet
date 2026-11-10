@@ -15,7 +15,6 @@ Projektet är en övning i OOP, användarinmatning, validering, loopar och villk
 
 Spelet avslutas efter det valda antalet omgångar. Högsta möjliga poäng är lika med antalet omgångar. Vid ogiltig inmatning visas ett felmeddelande och spelaren får försöka igen.
 
----
 
 ## Kom igång
 
@@ -31,6 +30,7 @@ Kontrollera Java-installation med:
 java -version
 javac -version
 ```
+
 
 ### Kompilera och kör programmet
 
@@ -50,7 +50,6 @@ java DiceGame
 
 Följ instruktionerna i terminalen.
 
----
 
 ## Projektstruktur
 
@@ -79,11 +78,8 @@ Hanterar användarinmatning med `Scanner`.
 - Metoden `readInt()` kontrollerar att inmatningen är ett heltal (`int`) inom tillåtet intervall.
 - Metoden `readName()` kontrollerar spelarens namn (`String`).
 
----
 
 ## Utvecklare
 
 - Jennie Falemar - [@JenFal93](https://github.com/JenFal93)
 - Elin Forssell - [@obymael](https://github.com/obymael)
-
----
