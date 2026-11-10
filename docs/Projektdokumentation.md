@@ -10,7 +10,7 @@ Projektet är en övning i OOP, användarinmatning, validering, loopar och villk
 
 ## **2 |** Spelregler och spelflöde
 
-**Spelflöde**: inställningar → gissning → tärningskast → jämförelse → poäng → nästa omgång
+**Spelflöde**: inställningar → gissning → tärningskast → jämförelse → poäng → nästa omgång  
 *Stegen från gissning upprepas tills det valda antalet omgångar har spelats därefter avslutas spelet.*
 
 1. Välj antal omgångar: 1-100.
