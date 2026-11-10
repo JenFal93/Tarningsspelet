@@ -55,15 +55,35 @@ Följ instruktionerna i terminalen.
 ## Projektstruktur
 
 ### DiceGame.java
-### Dice.java
+
+Innehåller programmets startpunkt, `main()`, och styr spelets flöde:
+
+- inställningar
+- omgångar
+- gissningar
+- jämförelse av resultat
+- uppdatering av poäng
+
+### Die.java
+
+Representerar en tärning med ett valt antal sidor. Metoden `roll()` slumpar fram ett värde mellan 1 och antalet sidor med hjälp av `Random`.
+
 ### Player.java
+
+Lagrar spelarens namn, poäng och tärning. Har metoder för att tilldela och kasta tärningen, hämta resultatet och öka poängen.
+
 ### InputHandler.java
+
+Hanterar användarinmatning med `Scanner`. 
+
+- Metoden `readInt()` kontrollerar att inmatningen är ett heltal (`int`) inom tillåtet intervall.
+- Metoden `readName()` kontrollerar spelarens namn (`String`).
 
 ---
 
 ## Utvecklare
 
-- Jennie Falemar @JenFal93
-- Elin Forssell @obymael
+- Jennie Falemar - @JenFal93
+- Elin Forssell - @obymael
 
 ---
