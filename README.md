@@ -83,7 +83,7 @@ Hanterar användarinmatning med `Scanner`.
 
 ## Utvecklare
 
-- Jennie Falemar - @JenFal93
-- Elin Forssell - @obymael
+- Jennie Falemar - [@JenFal93](https://github.com/JenFal93)
+- Elin Forssell - [@obymael](https://github.com/obymael)
 
 ---
