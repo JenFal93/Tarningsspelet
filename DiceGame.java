@@ -54,8 +54,16 @@ public class DiceGame {
             // Visa resultatet av tärningsspelet
             System.out.println("You rolled a " + dieValue + "!");
 
-            // TODO (Issue #3): Jämför gissningen med tärningens värde
-            // TODO (Issue #3): Öka poängen om spelaren gissade rätt
+            // Jämför gissningen med tärningens värde
+            if (guess == dieValue) {
+                // Öka poängen om spelaren gissade rätt
+                player.increaseScore();
+                System.out.println("Correct guess!");
+            } else {
+                // Ingen poäng vid fel gissning
+                System.out.println("Incorrect guess. Better luck next round!");
+            }
+
             // TODO (Issue #3): Visa resultatet och spelarens poäng
         }
 
