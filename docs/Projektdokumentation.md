@@ -74,26 +74,20 @@ Vi delade upp spelet i separata klasser med olika ansvarsområden:
 
 #### **4.2 |** Viktiga metoder
 
-**`main(String[] args)`** i klassen `DiceGame`
-- Ansvarar för att starta spelet och styra inställningar, omgångar och jämförelsen mellan gissning och resultat.
-
-**`readInt(String prompt, int min, int max)`** i klassen `InputHandler`
-- Läser heltal och kontrollerar att det ligger inom tillåtet intervall. Frågar igen vid ogiltig inmatning.
-
-**`readName(String prompt)`** i klassen `InputHandler`
-- Läser spelarens namn och kontrollerar att det inte är tomt eller enbart siffror. Frågar igen vid ogiltig inmatning.
-
-**`addDie(int numberOfSides)`** i klassen `Player`
-- TODO: lägg till vad den gör (ändra om vi ska använda någon annan metod som exempel)
-
-**`rollDice()`** i klassen `Player`
-- TODO: lägg till vad den gör (ändra om vi ska använda någon annan metod som exempel)
-
-**`roll()`** i klassen `Die`
-- TODO: lägg till vad den gör (ändra om vi ska använda någon annan metod som exempel)
-
-**`increaseScore()`** i klassen `Player`
-- TODO: lägg till vad den gör (ändra om vi ska använda någon annan metod som exempel)
+- **`main(String[] args)`** i klassen `DiceGame`
+    - Ansvarar för att starta spelet och styra inställningar, omgångar och jämförelsen mellan gissning och resultat.
+- **`readInt(String prompt, int min, int max)`** i klassen `InputHandler`
+    - Läser heltal och kontrollerar att det ligger inom tillåtet intervall. Frågar igen vid ogiltig inmatning.
+- **`readName(String prompt)`** i klassen `InputHandler`
+    - Läser spelarens namn och kontrollerar att det inte är tomt eller enbart siffror. Frågar igen vid ogiltig inmatning.
+- **`addDie(int numberOfSides)`** i klassen `Player`
+    - TODO: lägg till vad den gör (ändra om vi ska använda någon annan metod som exempel)
+- **`rollDice()`** i klassen `Player`
+    - TODO: lägg till vad den gör (ändra om vi ska använda någon annan metod som exempel)
+- **`roll()`** i klassen `Die`
+    - TODO: lägg till vad den gör (ändra om vi ska använda någon annan metod som exempel)
+- **`increaseScore()`** i klassen `Player`
+    - TODO: lägg till vad den gör (ändra om vi ska använda någon annan metod som exempel)
 
 Klasserna innehåller även getters och en setter för att läsa och uppdatera privata fält, exempelvis spelarens namn och poäng samt tärningens värde. Dessa beskrivs inte individuellt ovan men är viktiga för att andra klasser ska kunna komma åt informationen utan att fälten behöver vara publika.
 
