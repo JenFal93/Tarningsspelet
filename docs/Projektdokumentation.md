@@ -6,7 +6,7 @@ Ett terminalbaserat tärningsspel skrivet i Java. Spelaren väljer antalet omgå
 
 Projektet är en övning i OOP, användarinmatning, validering, loopar och villkor.
 
----
+---  
 
 ## **2 |** Spelregler och spelflöde
 
@@ -22,7 +22,7 @@ Projektet är en övning i OOP, användarinmatning, validering, loopar och villk
 
 Högsta möjliga poäng är lika med antalet omgångar. Vid ogiltig inmatning visas ett felmeddelande och spelaren får försöka igen.
 
----
+---  
 
 ## **3 |** Installation och körning
 
@@ -58,7 +58,7 @@ java DiceGame
 
 Följ instruktionerna i terminalen. Spelets meddelanden och instruktioner är på engelska.
 
----
+---  
 
 ## **4 |** Programstruktur
 
@@ -74,7 +74,30 @@ Vi delade upp spelet i separata klasser med olika ansvarsområden:
 
 #### **4.2 |** Viktiga metoder
 
----
+**`main(String[] args)`** i klassen `DiceGame`
+- Ansvarar för att starta spelet och styra inställningar, omgångar och jämförelsen mellan gissning och resultat.
+
+**`readInt(String prompt, int min, int max)`** i klassen `InputHandler`
+- Läser heltal och kontrollerar att det ligger inom tillåtet intervall. Frågar igen vid ogiltig inmatning.
+
+**`readName(String prompt)`** i klassen `InputHandler`
+- Läser spelarens namn och kontrollerar att det inte är tomt eller enbart siffror. Frågar igen vid ogiltig inmatning.
+
+**`addDie(int numberOfSides)`** i klassen `Player`
+- TODO: lägg till vad den gör (ändra om vi ska använda någon annan metod som exempel)
+
+**`rollDice()`** i klassen `Player`
+- TODO: lägg till vad den gör (ändra om vi ska använda någon annan metod som exempel)
+
+**`roll()`** i klassen `Die`
+- TODO: lägg till vad den gör (ändra om vi ska använda någon annan metod som exempel)
+
+**`increaseScore()`** i klassen `Player`
+- TODO: lägg till vad den gör (ändra om vi ska använda någon annan metod som exempel)
+
+Klasserna innehåller även getters och en setter för att läsa och uppdatera privata fält, exempelvis spelarens namn och poäng samt tärningens värde. Dessa beskrivs inte individuellt ovan men är viktiga för att andra klasser ska kunna komma åt informationen utan att fälten behöver vara publika.
+
+---  
 
 ## **5 |** Designbeslut och kodval
 
@@ -88,7 +111,7 @@ Detta följer två viktiga programmeringsprinciper:
 
 TODO: Skriv om användning av konstanter för gränsvärden ist för magic numbers - tydlig beskrivning om gränserna + lättare att ändra
 
----
+---  
 
 ## **6 |** Arbetsprocess och versionshantering
 TODO: Användning av Git & GitHub
@@ -101,7 +124,7 @@ TODO: Användning av Git & GitHub
 
 #### Pull Requests
 
----
+---  
 
 ## **7 |** Testning och felsökning
 TODO: Skriv om kontrollering av validering genom att testa olika typer av inmatning (fel typ etc.)
@@ -111,14 +134,13 @@ TODO: Skriv om kontrollering av validering genom att testa olika typer av inmatn
 #### **7.2 |** Problem och lösningar
 TODO: Skriv om input mismatch exceptions, programcrash osv som ledde till att vi implementerade validering i InputHandler
 
----
+---  
 
 ## **8 |** Användning av AI
 
 TODO: Skriv om användning som stöd för att skapa issues, diskutera struktur och lokik. Importance of understanding, granskning och testning istället för assume att det funkar. Dokumentation STRUKTUR.
 
----
+---  
 
 ## **9 |** Kända begränsningar och förbättringsmöjligheter
 
----
