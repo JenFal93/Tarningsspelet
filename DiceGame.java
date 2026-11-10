@@ -34,14 +34,21 @@ public class DiceGame {
         // Tilldela spelaren en tärning
         player.addDie(numberOfSides); // anropa addDie() med det angivna antalet sidor
 
+        int round; // för att hålla koll på antalet rundor
         // Skapa en loop som körs lika många gånger som antalet omgångar
-        // Implementera spellogiken i Issue #3
+        for (round = 1; round <= rounds; round++) { // börjar omgång 1, fortsätter tills högst antalet valda omgångar, ökar varje omgång med 1
 
-        // TODO (Issue #3): Be spelaren gissa ett tal
-        // TODO (Issue #3): Rulla spelarens tärning
-        // TODO (Issue #3): Jämför gissningen med tärningens värde
-        // TODO (Issue #3): Öka poängen om spelaren gissade rätt
-        // TODO (Issue #3): Visa resultatet och spelarens poäng
+            // Visa vilken omgång som ska spelas
+            System.out.println("\n======== 🎲 ROUND " + round + "/" + rounds + " =======");
+
+            // Implementera spellogiken i Issue #3
+
+            // TODO (Issue #3): Be spelaren gissa ett tal
+            // TODO (Issue #3): Rulla spelarens tärning
+            // TODO (Issue #3): Jämför gissningen med tärningens värde
+            // TODO (Issue #3): Öka poängen om spelaren gissade rätt
+            // TODO (Issue #3): Visa resultatet och spelarens poäng
+        }
 
         // VIKTIGT: Stäng Scanner när spelet är färdigt eftersom ingen mer inmatning behövs
         scanner.close();
