@@ -47,15 +47,8 @@ Till en början användes `Scanner` direkt i `DiceGame`, vilket innebar att inma
 Vi använder oss även av konstanter för gränsvärden istället för magic numbers (hårdkodade siffror), detta gör det tydligare vad siffrorna står för samt att man vid ändring bara behöver ändra på ett ställe.
 
 ## **4 |** Arbetsprocess och versionshantering
-TODO: Användning av Git & GitHub
 
-#### Issues
-
-#### Branches
-
-#### Commits
-
-#### Pull Requests
+Vi använde oss av Git och GitHub för versionshantering och samarbete. Arbetet delades upp i issues och genomfördes i separata branches. Vi sparade mindre ändringar med beskrivande commits och använde oss av pull requests för att granska och sammanföra koden. Länk till vårat repository [Tärningsspelet](https://github.com/JenFal93/Tarningsspelet/).
 
 ## **5 |** Testning och felsökning
 TODO: Skriv om kontrollering av validering genom att testa olika typer av inmatning (fel typ etc.)
