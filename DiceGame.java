@@ -52,7 +52,7 @@ public class DiceGame {
             // Hämta tärningens aktuella värde
             int dieValue = player.getDieValue();
             // Visa resultatet av tärningsspelet
-            System.out.println("Dice rolled: " + dieValue);
+            System.out.println("You rolled a " + dieValue + "!");
 
             // TODO (Issue #3): Jämför gissningen med tärningens värde
             // TODO (Issue #3): Öka poängen om spelaren gissade rätt
