@@ -10,6 +10,9 @@ Projektet är en övning i OOP, användarinmatning, validering, loopar och villk
 
 ## **2 |** Spelregler och spelflöde
 
+**Spelflöde**: inställningar → gissning → tärningskast → jämförelse → poäng → nästa omgång
+*Stegen från gissning upprepas tills det valda antalet omgångar har spelats därefter avslutas spelet.*
+
 1. Välj antal omgångar: 1-100.
 2. Välj antal sidor på tärningen: 2-20.
 3. Ange ett spelnamn. Namnet får inte vara tomt eller enbart bestå av siffror.
@@ -17,7 +20,7 @@ Projektet är en övning i OOP, användarinmatning, validering, loopar och villk
 5. Tärningen kastas efter gissningen. En rätt gissning ger 1 poäng, en felaktig gissning ger inga poäng.
 6. Tärningens resultat, om gissningen var rätt eller ej, samt spelarens totala poäng visas efter varje kast.
 
-Spelet avslutas efter det valda antalet omgångar. Högsta möjliga poäng är lika med antalet omgångar. Vid ogiltig inmatning visas ett felmeddelande och spelaren får försöka igen.
+Högsta möjliga poäng är lika med antalet omgångar. Vid ogiltig inmatning visas ett felmeddelande och spelaren får försöka igen.
 
 ---
 
