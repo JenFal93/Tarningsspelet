@@ -28,15 +28,3 @@ TODO: Skriv projektbeskrivning
 - Elin Forssell @obymael
 
 ---
-
-## Användning av Git & GitHub
-
-#### Issues
-
-#### Branches
-
-#### Commits
-
-#### Pull Requests
-
----
