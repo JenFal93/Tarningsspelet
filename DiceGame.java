@@ -43,7 +43,10 @@ public class DiceGame {
 
             // Implementera spellogiken i Issue #3
 
-            // TODO (Issue #3): Be spelaren gissa ett tal
+            // Be spelaren gissa ett tal (inom tärningens möjliga värden)
+            System.out.print("Enter your guess (1-" + numberOfSides + "): ");
+            int guess = scanner.nextInt();
+            
             // TODO (Issue #3): Rulla spelarens tärning
             // TODO (Issue #3): Jämför gissningen med tärningens värde
             // TODO (Issue #3): Öka poängen om spelaren gissade rätt
