@@ -45,9 +45,15 @@ public class DiceGame {
 
             // Be spelaren gissa ett tal (inom tärningens möjliga värden)
             System.out.print("Enter your guess (1-" + numberOfSides + "): ");
-            int guess = scanner.nextInt();
-            
-            // TODO (Issue #3): Rulla spelarens tärning
+            int guess = scanner.nextInt(); // spara gissningen i variabeln guess
+
+            // Rulla spelarens tärning
+            player.rollDice();
+            // Hämta tärningens aktuella värde
+            int dieValue = player.getDieValue();
+            // Visa resultatet av tärningsspelet
+            System.out.println("Dice rolled: " + dieValue);
+
             // TODO (Issue #3): Jämför gissningen med tärningens värde
             // TODO (Issue #3): Öka poängen om spelaren gissade rätt
             // TODO (Issue #3): Visa resultatet och spelarens poäng
