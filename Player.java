@@ -30,6 +30,9 @@ public class Player {
     }
 
     // Rullar spelarens tärning 
+    public void rollDice() {
+        die.roll();
+    }
 
     // Retunerar tärningens aktuella värde 
     public int getDieValue() {
@@ -37,5 +40,8 @@ public class Player {
     }
 
     // Ökar spelarens poäng med +1 
+    public void increaseScore() {
+        score = score + 1; 
+    }
 
 }
