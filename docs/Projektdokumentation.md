@@ -27,13 +27,13 @@ Vi delade upp spelet i separata klasser med olika ansvarsområden:
 - **`readName(String prompt)`** i klassen `InputHandler`
     - Läser spelarens namn och kontrollerar att det inte är tomt eller enbart siffror. Frågar igen vid ogiltig inmatning.
 - **`addDie(int numberOfSides)`** i klassen `Player`
-    - TODO: lägg till vad den gör (ändra om vi ska använda någon annan metod som exempel)
+    - Skapar en ny tärning med angivet antal sidor och tilldelar den till spelaren.
 - **`rollDice()`** i klassen `Player`
-    - TODO: lägg till vad den gör (ändra om vi ska använda någon annan metod som exempel)
+    - Rullar spelarens tilldelade tärning genom att anropa metoden roll() från klassen Die.
 - **`roll()`** i klassen `Die`
-    - TODO: lägg till vad den gör (ändra om vi ska använda någon annan metod som exempel)
+    - Slumpar fram ett nytt tärningsvärde mellan 1 och tärningens antal sidor.
 - **`increaseScore()`** i klassen `Player`
-    - TODO: lägg till vad den gör (ändra om vi ska använda någon annan metod som exempel)
+    - Ökar spelarens poäng med 1. 
 
 Klasserna innehåller även getters och en setter för att läsa och uppdatera privata fält, exempelvis spelarens namn och poäng samt tärningens värde. Dessa beskrivs inte individuellt ovan men är viktiga för att andra klasser ska kunna komma åt informationen utan att fälten behöver vara publika.
 
@@ -60,7 +60,7 @@ TODO: Skriv om input mismatch exceptions, programcrash osv som ledde till att vi
 
 ## **6 |** Användning av AI
 
-TODO: Skriv om användning som stöd för att skapa issues, diskutera struktur och lokik. Importance of understanding, granskning och testning istället för assume att det funkar. Dokumentation STRUKTUR.
+TODO: Skriv om användning som stöd för att skapa issues, diskutera struktur och logik. Importance of understanding, granskning och testning istället för assume att det funkar. Dokumentation STRUKTUR.
 
 ## **7 |** Kända begränsningar och förbättringsmöjligheter
 
