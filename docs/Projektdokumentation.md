@@ -54,6 +54,7 @@ Vi använde oss av Git och GitHub för versionshantering och samarbete. Arbetet 
 TODO: Skriv om kontrollering av validering genom att testa olika typer av inmatning (fel typ etc.)
 
 #### **5.1 |** Genomförda tester
+TODO: Skriv tester
 
 #### **5.2 |** Problem och lösningar
 TODO: Skriv om input mismatch exceptions, programcrash osv som ledde till att vi implementerade validering i InputHandler
