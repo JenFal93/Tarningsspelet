@@ -41,7 +41,7 @@ public class Player {
 
     // Ökar spelarens poäng med +1 
     public void increaseScore() {
-        score = score + 1; 
+        score ++; 
     }
 
 }
