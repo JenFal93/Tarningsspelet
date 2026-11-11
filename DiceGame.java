@@ -43,11 +43,29 @@ public class DiceGame {
 
             // Implementera spellogiken i Issue #3
 
-            // TODO (Issue #3): Be spelaren gissa ett tal
-            // TODO (Issue #3): Rulla spelarens tärning
-            // TODO (Issue #3): Jämför gissningen med tärningens värde
-            // TODO (Issue #3): Öka poängen om spelaren gissade rätt
-            // TODO (Issue #3): Visa resultatet och spelarens poäng
+            // Be spelaren gissa ett tal (inom tärningens möjliga värden)
+            System.out.print("Enter your guess (1-" + numberOfSides + "): ");
+            int guess = scanner.nextInt(); // spara gissningen i variabeln guess
+
+            // Rulla spelarens tärning
+            player.rollDice();
+            // Hämta tärningens aktuella värde
+            int dieValue = player.getDieValue();
+            // Visa resultatet av tärningsspelet
+            System.out.println("You rolled a " + dieValue + "!");
+
+            // Jämför gissningen med tärningens värde
+            if (guess == dieValue) {
+                // Öka poängen om spelaren gissade rätt
+                player.increaseScore();
+                System.out.println("Correct guess!");
+            } else {
+                // Ingen poäng vid fel gissning
+                System.out.println("Incorrect guess. Better luck next round!");
+            }
+
+            // Visa resultatet och spelarens poäng
+            System.out.println("Player score: " + player.getScore());
         }
 
         // VIKTIGT: Stäng Scanner när spelet är färdigt eftersom ingen mer inmatning behövs
