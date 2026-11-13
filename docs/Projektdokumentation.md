@@ -51,17 +51,28 @@ Vi använder oss även av konstanter för gränsvärden istället för magic num
 Vi använde oss av Git och GitHub för versionshantering och samarbete. Arbetet delades upp i issues och genomfördes i separata branches. Vi sparade mindre ändringar med beskrivande commits och använde oss av pull requests för att granska och sammanföra koden. Länk till vårt repository: [Tärningsspelet](https://github.com/JenFal93/Tarningsspelet/).
 
 ## **5 |** Testning och felsökning
-TODO: Skriv om kontrollering av validering genom att testa olika typer av inmatning (fel typ etc.)
+För att kontrollera att pogrammets inmatning fungerade som förväntat genomförde vi manuella tester med olika typer av användarinmatning. Syftet var att säkerställa att programmet hanterar både giltiga och ogiltiga värden samt ger användaren tydliga felmeddelanden vid felaktig inmatning. 
 
 #### **5.1 |** Genomförda tester
-TODO: Skriv tester
+Manuella tester genomfördes genom att mata in olika värden i terminalen för att kontrollera programmets validering. 
+
+Vi testade exempelvis att skriva in en siffra där text skulle anges (spelarens namn), att ange 0 när programmet bad oss välja ett nummer mellan 1-100 samt att skriva ett tal med bokstäver istället för siffror. 
+
+Testerna visade att programmet kunde hantera felaktig inmatning och ge användaren möjlighet att korrigera sina svar utan att behöva starta om programmet. 
 
 #### **5.2 |** Problem och lösningar
 TODO: Skriv om input mismatch exceptions, programcrash osv som ledde till att vi implementerade validering i InputHandler
 
 ## **6 |** Användning av AI
+TODO: Skriv om användning som stöd för att skapa issues, diskutera struktur och logik. Importance of understanding, granskning och testning istället för assume att det funkar. Dokumentation STRUKTUR. 
 
-TODO: Skriv om användning som stöd för att skapa issues, diskutera struktur och logik. Importance of understanding, granskning och testning istället för assume att det funkar. Dokumentation STRUKTUR.
+ ## 6 | Användning av AI
+
+AI har använts som ett stöd under projektets gång genom att bland annat hjälpa till att formulera issues i GitHub samt resonera kring olika lösningar och logik i koden.
+
+AI har också varit ett stöd vid utformningen och strukturen av projektdokumentationen.
+
+AI har fungerat som ett kompletterande verktyg och har underlättat både utvecklingsarbetet och lärandet. Det har samtidigt varit viktigt att kritiskt granska de förslag som AI har gett och testa dem innan de implementerats i koden. Det är viktigt att själv förstå hur koden fungerar och inte förutsätta att ett förslag från AI automatiskt är korrekt. 
 
 ## **7 |** Kända begränsningar och förbättringsmöjligheter
 
