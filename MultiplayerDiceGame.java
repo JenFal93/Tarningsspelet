@@ -23,16 +23,29 @@ public class MultiplayerDiceGame {
     
     public static void main(String[] args) {
         
-        // TODO: Initiera spelare och spelinställningar
-        
         // DEBUG: kontrollera att spelarna skapas
         ArrayList<Player> players = intitialize();
-        for (Player player : players) {
+        /* for (Player player : players) {
             System.out.println("Created player: " + player.getName());
+        } */
+
+        // DEBUG: Testa att genomföra en omgång
+        // takeTurn(players);
+
+        // DEBUG: Testa att genomföra flera omgångar (enl användarens input)
+        for (int round = 1; round <= rounds; round++) {
+
+            // Visa aktuell omgång
+
+            // Låt alla spelare genomföra sitt kast
+            takeTurn(players);
         }
 
+        // TODO: Initiera spelare och spelinställningar
         // TODO: Spela valt antal omgångar
         // TODO: Hitta och visa vinnare
+
+        // Stäng InputHandler när spelet är färdigt
         input.close();
     }
 
@@ -78,7 +91,29 @@ public class MultiplayerDiceGame {
         return players;
     }
 
-    // TODO: Låt alla spelare slå sina tärningar och samla poäng
+    // Låt alla spelare slå sina tärningar och samla poäng
+    private static void takeTurn(ArrayList<Player> players) {
+        
+        // Gå igenom alla spelare i listan
+        for (Player player : players) {
+            
+            // Visa vilken spelare som ska slå sina tärningar
+            System.out.println("\n" + player.getName() + "'s turn!");
+
+            // Rulla spelarens alla tärningar
+            player.rollDice();
+
+            // Hämta summan av tärningarnas värden
+            int roundScore = player.getDiceTotal();
+
+            // Lägg till summan i spelarens poäng
+            player.addScore(roundScore);
+
+            // Visa resultatet och spelarens uppdaterade poäng
+            System.out.println("Round score: " + roundScore);
+            System.out.println("Player score: " + player.getScore());
+        }
+    }
 
     // TODO: Returnera alla spelare med högst poäng
 
