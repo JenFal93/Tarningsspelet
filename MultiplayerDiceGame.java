@@ -24,11 +24,19 @@ public class MultiplayerDiceGame {
     public static void main(String[] args) {
         
         // TODO: Initiera spelare och spelinställningar
+        
+        // DEBUG: kontrollera att spelarna skapas
+        ArrayList<Player> players = intitialize();
+        for (Player player : players) {
+            System.out.println("Created player: " + player.getName());
+        }
+
         // TODO: Spela valt antal omgångar
         // TODO: Hitta och visa vinnare
+        input.close();
     }
 
-    // TODO: Läs in inställningar och skapa spelare
+    // Läs in inställningar och skapa spelare
     private static ArrayList<Player> intitialize() {
 
         // Skapa en lista som ska innehålla alla spelare
@@ -49,7 +57,23 @@ public class MultiplayerDiceGame {
             "Number of rounds (" + MIN_ROUNDS + "-" + MAX_ROUNDS + "): ", MIN_ROUNDS, MAX_ROUNDS
         );
 
-        // TODO: Skapa spelarna och tilldela deras tärningar 
+        // Skapa spelarna och tilldela deras tärningar
+        for (int i = 1; i <= numberOfPlayers; i++) {
+
+            // Fråga efter spelarens namn
+            String playerName = input.readName("Player " + i + " name: ");
+
+            // Skapa ett nytt Player-objekt
+            Player player = new Player(playerName);
+
+            // Tilldela spelaren det valda antalet tärningar
+            for (int j = 0; j <= numberOfDice; j++) {
+                player.addDie(DICE_SIDES);
+            }
+
+            // Lägg till spelaren i listan
+            players.add(player);
+        }
 
         return players;
     }
