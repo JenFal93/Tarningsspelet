@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class PigGame {
 
     // TODO: Konstanter för spelregler och tillåtna gränsvärden
@@ -14,7 +16,14 @@ public class PigGame {
 
     public static void main(String[] args) {
 
-        // TODO: Initiera spelare och spelinställningar
+        // Initiera spelare och spelinställningar
+        ArrayList<Player> players = initialize();
+
+        // DEBUG: Kontrollera att spelarna skapats
+        for (Player player : players) {
+            System.out.println("Created player: " + player.getName());
+        }
+
         // TODO: Starta spelets turordning
         // TODO: Avsluta spelet när en spelare når 100 poäng
 
@@ -22,7 +31,36 @@ public class PigGame {
         input.close();
     }
     
-    // TODO: Skapa spelarna och tilldela varsin 6-sidig tärning
+    // Skapa spelarna och tilldela varsin 6-sidig tärning
+    private static ArrayList<Player> initialize() {
+
+        // Skapa en lista som ska innehålla alla spelare
+        ArrayList<Player> players = new ArrayList<>();
+
+        // Läs in antalet spelare
+        int numberOfPlayers = input.readInt(
+            "Number of players (" + MIN_PLAYERS + "-" + MAX_PLAYERS + "): ", MIN_PLAYERS, MAX_PLAYERS
+        );
+
+        // Skapa spelarna och tilldela deras tärningar
+        for (int i = 1; i <= numberOfPlayers; i++) {
+
+            // Fråga efter spelarens namn
+            String playerName = input.readName("Player " + i + " name: ");
+
+            // Skapa ett nytt Player-objekt
+            Player player = new Player(playerName);
+
+            // Tilldela spelaren en tärning
+            player.addDie(DICE_SIDES);
+
+            // Lägg till spelaren i listan
+            players.add(player);
+        }
+
+        return players;
+    }
+
     // TODO: Hantera en spelares tur och tillfälliga pott
-    // TODO: Kontrollera om en speare har vunnit
+    // TODO: Kontrollera om en spelare har vunnit
 }
