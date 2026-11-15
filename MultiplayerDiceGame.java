@@ -24,7 +24,7 @@ public class MultiplayerDiceGame {
     public static void main(String[] args) {
 
         // Initiera spelare och spelinställningar
-        ArrayList<Player> players = intitialize();
+        ArrayList<Player> players = initialize();
 
         // DEBUG: Testa att genomföra en omgång
         // takeTurn(players);
@@ -53,7 +53,7 @@ public class MultiplayerDiceGame {
     }
 
     // Läs in inställningar och skapa spelare
-    private static ArrayList<Player> intitialize() {
+    private static ArrayList<Player> initialize() {
 
         // Skapa en lista som ska innehålla alla spelare
         ArrayList<Player> players = new ArrayList<>();
