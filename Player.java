@@ -1,14 +1,17 @@
+import java.util.ArrayList;
+
 public class Player {
 
     // Instansvariabler 
     private String name;
     private int score; 
-    private Die die;
+    private ArrayList<Die> dice; // en ArrayList låter oss lagra flera Die-objekt i samma spelare
 
     // Konstruktor som tar emot spelarens namn 
     public Player(String name) {
         this.name = name;
         this.score = 0;
+        this.dice = new ArrayList<>(); // varje spelare har en egen, tom lista med tärningar när objektet skapas
     }
   
    public String getName() {
@@ -26,17 +29,31 @@ public class Player {
 
     // Skapa en tärning med angivet antal sidor och tilldela den till spelaren 
     public void addDie(int numberOfSides) {
-        this.die = new Die(numberOfSides); // Den här tärningen är en ny tärning med x antal sidor 
+        //this.die = new Die(numberOfSides); // Den här tärningen är en ny tärning med x antal sidor 
+        dice.add(new Die(numberOfSides)); // lägg till nya tärningar i listan
     }
 
-    // Rullar spelarens tärning 
+    // Rullar spelarens tärningar
     public void rollDice() {
-        die.roll();
+        for (Die die : dice) {
+            die.roll();
+        }
     }
 
-    // Retunerar tärningens aktuella värde 
+    // Retunerar värdet från spelarens första tärning för att behålla kompatibiliteten med enspelarläget
     public int getDieValue() {
-        return die.getValue(); // Kallar på metoden getValue från Die-klassen 
+        return dice.get(0).getValue(); // Kallar på metoden getValue från Die-klassen 
+    }
+
+    // Returnerar summan av spelarens alla tärningsvärden
+    public int getDiceTotal() {
+        int total = 0;
+
+        for (Die die : dice) {
+            total += die.getValue();
+        }
+
+        return total;
     }
 
     // Ökar spelarens poäng med +1 
