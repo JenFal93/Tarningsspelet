@@ -8,12 +8,6 @@ public class DiceGame {
 
     public static void main(String[] args) {
 
-        // DEBUG: testa om ny addScore metod i Player fungerar
-        /* Player testPlayer = new Player("Test");
-        testPlayer.addScore(5);
-        testPlayer.addScore(10);
-        System.out.println(testPlayer.getScore()); // 15 */
-
         // Skapa ett InputHandler-objekt för att läsa inmatning från terminalen
         InputHandler input = new InputHandler();
 
