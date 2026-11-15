@@ -61,4 +61,9 @@ public class Player {
         score++; 
     }
 
+    // Lägger till ett angivet antal poäng till spelarens totalpoäng
+    public void addScore(int points) {
+        score += points;
+    }
+
 }
