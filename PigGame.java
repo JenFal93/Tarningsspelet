@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class PigGame {
 
-    // TODO: Konstanter för spelregler och tillåtna gränsvärden
+    // Konstanter för spelregler och tillåtna gränsvärden
     private static final int MIN_PLAYERS = 2;
     private static final int MAX_PLAYERS = 10;
 
@@ -21,7 +21,8 @@ public class PigGame {
 
         // DEBUG: Kontrollera att spelarna skapats
         for (Player player : players) {
-            System.out.println("Created player: " + player.getName());
+            // System.out.println("Created player: " + player.getName());
+            takeTurn(player);
         }
 
         // TODO: Starta spelets turordning
@@ -61,6 +62,38 @@ public class PigGame {
         return players;
     }
 
-    // TODO: Hantera en spelares tur och tillfälliga pott
+    // Hantera en spelares tur och tillfälliga pott
+    private static void takeTurn(Player player) {
+
+        // Skapa en tillfällig pott för spelarens turn
+        int turnPot = 0;
+
+        // Visa vilken spelares tur det är
+        System.out.println("\n" + player.getName() + "'s turn!");
+
+        // Slå spelarens tärning
+        player.rollDice();
+
+        // Hämta tärningens värde
+        int diceValue = player.getDieValue();
+
+        // Visa tärningsresultatet
+        System.out.println("Dice rolled: " + diceValue);
+
+        // Kontrollera om spelaren slog en etta
+        if (diceValue == LOSING_ROLL) {
+            turnPot = 0;
+            System.out.println("OH NO! You rolled a 1 and lost your turn pot!");
+        } else {
+            // Lägg till tärningsvärdet i den tillfälliga potten
+            turnPot += diceValue;
+        }
+
+        // Visa aktuell pot och spelarens totalpoäng
+        System.out.println("Turn pot: " + turnPot);
+        System.out.println("Total score: " + player.getScore());
+    }
+
+
     // TODO: Kontrollera om en spelare har vunnit
 }
