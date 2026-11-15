@@ -8,7 +8,7 @@ public class MultiplayerDiceGame {
 
     private static final int MIN_DICE = 1;
     private static final int MAX_DICE = 10;
-    
+
     private static final int MIN_ROUNDS = 1;
     private static final int MAX_ROUNDS = 100;
 
@@ -20,30 +20,33 @@ public class MultiplayerDiceGame {
     // Skapa ett InputHandler-objekt för att läsa inmatning från terminalen
     private static final InputHandler input = new InputHandler(); // kan användas av main() och initialize()
 
-    
+
     public static void main(String[] args) {
-        
-        // DEBUG: kontrollera att spelarna skapas
+
+        // Initiera spelare och spelinställningar
         ArrayList<Player> players = intitialize();
-        /* for (Player player : players) {
-            System.out.println("Created player: " + player.getName());
-        } */
 
         // DEBUG: Testa att genomföra en omgång
         // takeTurn(players);
 
-        // DEBUG: Testa att genomföra flera omgångar (enl användarens input)
+        // Spela valt antal omgångar
         for (int round = 1; round <= rounds; round++) {
 
             // Visa aktuell omgång
+            System.out.println("\n===== 🎲 ROUND " + round + "/" + rounds + " 🎲 =====");
 
             // Låt alla spelare genomföra sitt kast
             takeTurn(players);
         }
 
-        // TODO: Initiera spelare och spelinställningar
-        // TODO: Spela valt antal omgångar
-        // TODO: Hitta och visa vinnare
+        // Hitta och visa vinnare
+        ArrayList<Player> winners = getWinners(players);
+
+        System.out.println("\n===== 🏆 WINNER(S) 🏆 =====");
+
+        for (Player winner : winners) {
+            System.out.println(" - " + winner.getName() + " wins with " + winner.getScore() + " points!");
+        }
 
         // Stäng InputHandler när spelet är färdigt
         input.close();
@@ -93,10 +96,10 @@ public class MultiplayerDiceGame {
 
     // Låt alla spelare slå sina tärningar och samla poäng
     private static void takeTurn(ArrayList<Player> players) {
-        
+
         // Gå igenom alla spelare i listan
         for (Player player : players) {
-            
+
             // Visa vilken spelare som ska slå sina tärningar
             System.out.println("\n" + player.getName() + "'s turn!");
 
@@ -115,7 +118,33 @@ public class MultiplayerDiceGame {
         }
     }
 
-    // TODO: Returnera alla spelare med högst poäng
+    // Returnera spelaren/spelarna med högst poäng
+    private static ArrayList<Player> getWinners(ArrayList<Player> players) {
+        // Skapa en lista för vinnarna
+        ArrayList<Player> winners = new ArrayList<>();
 
+        // Håll reda på den högsta poängen
+        int highestScore = Integer.MIN_VALUE;
+
+        // Gå igenom alla spelare
+        for (Player player : players) {
+
+            // Om spelaren har högre poäng än tidigare spelare
+            if (player.getScore() > highestScore) {
+                highestScore = player.getScore();
+
+                // Töm listan eftersom vi hittat en ny högsta poäng
+                winners.clear();
+                winners.add(player);
+
+            // Om spelaren har samma poäng som den högsta
+            } else if (player.getScore() == highestScore) {
+                winners.add(player);
+            }
+        }
+
+        // Returnera alla spelare som delar den högsta poängen
+        return winners;
+    }
 
 }
