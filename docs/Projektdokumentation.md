@@ -4,12 +4,11 @@
 
 Tärningsspelet är ett terminalbaserat Java-program där spelaren väljer antalet omgångar, tärningens antal sidor och försöker därefter gissa resultatet av varje kast. Rätt gissning ger en poäng. Resultatet och totalpoängen visas efter varje omgång. För att kompilera och köra krävs JDK, instruktioner kring hur detta används finns i projektets README. Projektet är en övning i OOP (Objekt-Orienterad Programmering), användarinmatning, validering, loopar och villkor.
 
-För att starta programmet så kör man ett kommando som heter `javac`
+För att starta programmet:
 
-```
-    javac MultiplayerDiceGame.java
-
-    java MultiplayerDiceGame
+```bash
+    javac DiceGame.java Die.java Player.java InputHandler.java # kompilerar filerna
+    java DiceGame # kör programmet
 ```
 
 **Spelflöde**: inställningar → gissning → tärningskast → jämförelse → poäng → nästa omgång  
