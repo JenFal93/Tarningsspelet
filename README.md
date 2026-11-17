@@ -2,7 +2,9 @@
 
 Ett terminalbaserat tärningsspel skrivet i Java. Spelaren väljer antalet omgångar och tärningens antal sidor och försöker därefter gissa resultatet av varje kast.
 
-Projektet är en övning i OOP, användarinmatning, validering, loopar och villkor.
+Projektet är en övning i OOP (Objekt-Orienterad Programmering), användarinmatning, validering, loopar och villkor.
+
+Elin har även implementerat `MultiPlayerDiceGame` samt `PigGame` som var extrauppgifter men dessa är inte mergeade till `main` utan ligger som separata branches eftersom vi inte gjorde detta som grupp.
 
 ## Spelregler
 
