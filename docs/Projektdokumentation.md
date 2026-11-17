@@ -1,0 +1,79 @@
+# **Tärningsspelet |** Projektdokumentation
+
+## Spelregler
+
+1. Välj antal omgångar: 1-100.
+2. Välj antal sidor på tärningen: 2-20.
+3. Ange ett spelnamn. Namnet får inte vara tomt eller enbart bestå av siffror.
+4. Gissa ett heltal mellan 1 och tärningens antal sidor inför varje kast.
+5. Tärningen kastas efter gissningen. En rätt gissning ger 1 poäng, en felaktig gissning ger inga poäng.
+6. Tärningens resultat, om gissningen var rätt eller ej, samt spelarens totala poäng visas efter varje kast.
+
+**Spelflöde**: inställningar → gissning → tärningskast → jämförelse → poäng → nästa omgång  
+☞ *Stegen från gissning upprepas tills det valda antalet omgångar har spelats därefter avslutas spelet. Högsta möjliga poäng är lika med antalet omgångar. Vid ogiltig inmatning visas ett felmeddelande och spelaren får försöka igen.*
+
+## För att starta spelet:
+
+```bash
+    javac DiceGame.java Die.java Player.java InputHandler.java # kompilerar filerna
+    java DiceGame # kör programmet
+```
+
+## **2 |** Programstruktur
+
+#### **2.1 |** Klasser och ansvarsområden.  
+
+- `Die` ansvarar för tärningen
+- `Player` hanterar spelaren och poängen
+- `DiceGame` styr spelets flöde
+- `InputHandler` sköter inmatning och validering
+
+#### **2.2 |** Viktiga metoder
+
+- **`main(String[] args)`** i klassen `DiceGame`
+    - Ansvarar för att starta spelet och styra inställningar, omgångar och jämförelsen mellan gissning och resultat.
+- **`readInt(String prompt, int min, int max)`** i klassen `InputHandler`
+    - Läser heltal och kontrollerar att det ligger inom tillåtet intervall. Frågar igen vid ogiltig inmatning.
+- **`readName(String prompt)`** i klassen `InputHandler`
+    - Läser spelarens namn och kontrollerar att det inte är tomt eller enbart siffror. Frågar igen vid ogiltig inmatning.
+- **`addDie(int numberOfSides)`** i klassen `Player`
+    - Skapar en ny tärning med angivet antal sidor och tilldelar den till spelaren.
+- **`rollDice()`** i klassen `Player`
+    - Rullar spelarens tilldelade tärning genom att anropa metoden roll() från klassen Die.
+- **`roll()`** i klassen `Die`
+    - Slumpar fram ett nytt tärningsvärde mellan 1 och tärningens antal sidor.
+- **`increaseScore()`** i klassen `Player`
+    - Ökar spelarens poäng med 1. 
+
+Klasserna innehåller även getters och en setter för att läsa och uppdatera privata fält, exempelvis spelarens namn och poäng samt tärningens värde. Dessa beskrivs inte individuellt ovan men är viktiga för att andra klasser ska kunna komma åt informationen utan att fälten behöver vara publika.
+
+## **3 |** Designbeslut och kodval
+
+Till en början användes `Scanner` direkt i `DiceGame`, vilket innebar att inmatning och spellogiken hanterades i samma klass. Under utvecklingen identifierade vi ett behov att förbättra detta och skapade därför den separata klassen `InputHandler`, för att samla inmatning och validering på ett ställe. Detta följer två viktiga programmeringsprinciper:
+
+- **DRY (Don't Repeat Yourself)**: Samma metod för att läsa och validera heltal (integers) kan återanvändas för antal omgångar, antal tärningssidor och spelarens gissningar.
+- **Separation of Concerns**: `InputHandler` ansvarar för inmatning och validering, medan `DiceGame` fokuserar på spellogiken.
+
+Vi använder oss även av konstanter för gränsvärden istället för magic numbers (hårdkodade siffror), detta gör det tydligare vad siffrorna står för samt att man vid ändring bara behöver ändra på ett ställe.
+
+## **4 |** Arbetsprocess och versionshantering
+
+Vi använde oss av Git och GitHub för versionshantering och samarbete. Arbetet delades upp i issues och genomfördes i separata branches. Vi sparade mindre ändringar med beskrivande commits och använde oss av pull requests för att granska och sammanföra koden. Länk till vårt repository: [Tärningsspelet](https://github.com/JenFal93/Tarningsspelet/).
+
+## **5 |** Testning och felsökning
+
+För att kontrollera att pogrammets inmatning fungerade som förväntat genomförde vi manuella tester med olika typer av användarinmatning. Syftet var att säkerställa att programmet hanterar både giltiga och ogiltiga värden samt ger användaren tydliga felmeddelanden vid felaktig inmatning. 
+
+#### **5.1 |** Genomförda tester
+
+Manuella tester genomfördes genom att mata in olika värden i terminalen för att kontrollera programmets validering. Vi testade exempelvis att skriva in en siffra där text skulle anges (spelarens namn), att ange 0 när programmet bad oss välja ett nummer mellan 1-100 samt att skriva ett tal med bokstäver istället för siffror. Testerna visade att programmet kunde hantera felaktig inmatning och ge användaren möjlighet att korrigera sina svar utan att behöva starta om programmet. 
+
+#### **5.2 |** Problem och lösningar
+
+Under utvecklingen upptäckte vi att programmet kunde krascha om användaren skrev in fel typ av värde, ex text istället för ett heltal. Detta kunde orsaka ett `InputMismatchException` när vi använde `Scanner`. För att lösa problemet skapade vi klassen `InputHandler`, där vi samlade inmatning och validering; på så sätt kunde vi visa ett felmeddelande och låta användaren försöka igen istället för att programmet avslutades.
+
+## **6 |** Användning av AI
+
+- AI har använts som ett stöd under projektets gång genom att bland annat hjälpa till att formulera issues i GitHub samt resonera kring olika lösningar och logik i koden.
+- AI har också varit ett stöd vid utformningen och strukturen av projektdokumentationen.
+- AI har fungerat som ett kompletterande verktyg och har underlättat både utvecklingsarbetet och lärandet. Det har samtidigt varit viktigt att kritiskt granska de förslag som AI har gett och testa dem innan de implementerats i koden. Det är viktigt att själv förstå hur koden fungerar och inte förutsätta att ett förslag från AI automatiskt är korrekt. 
