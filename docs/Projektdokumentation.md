@@ -1,24 +1,27 @@
 # **Tärningsspelet |** Projektdokumentation
 
-## **1 |** Projektbeskrivning och syfte
+## Spelregler
 
-Tärningsspelet är ett terminalbaserat Java-program där spelaren väljer antalet omgångar, tärningens antal sidor och försöker därefter gissa resultatet av varje kast. Rätt gissning ger en poäng. Resultatet och totalpoängen visas efter varje omgång. För att kompilera och köra krävs JDK, instruktioner kring hur detta används finns i projektets README. Projektet är en övning i OOP (Objekt-Orienterad Programmering), användarinmatning, validering, loopar och villkor.
+1. Välj antal omgångar: 1-100.
+2. Välj antal sidor på tärningen: 2-20.
+3. Ange ett spelnamn. Namnet får inte vara tomt eller enbart bestå av siffror.
+4. Gissa ett heltal mellan 1 och tärningens antal sidor inför varje kast.
+5. Tärningen kastas efter gissningen. En rätt gissning ger 1 poäng, en felaktig gissning ger inga poäng.
+6. Tärningens resultat, om gissningen var rätt eller ej, samt spelarens totala poäng visas efter varje kast.
 
-För att starta programmet:
+**Spelflöde**: inställningar → gissning → tärningskast → jämförelse → poäng → nästa omgång  
+☞ *Stegen från gissning upprepas tills det valda antalet omgångar har spelats därefter avslutas spelet. Högsta möjliga poäng är lika med antalet omgångar. Vid ogiltig inmatning visas ett felmeddelande och spelaren får försöka igen.*
+
+## För att starta spelet:
 
 ```bash
     javac DiceGame.java Die.java Player.java InputHandler.java # kompilerar filerna
     java DiceGame # kör programmet
 ```
 
-**Spelflöde**: inställningar → gissning → tärningskast → jämförelse → poäng → nästa omgång  
-☞ *Stegen från gissning upprepas tills det valda antalet omgångar har spelats därefter avslutas spelet. Högsta möjliga poäng är lika med antalet omgångar. Vid ogiltig inmatning visas ett felmeddelande och spelaren får försöka igen.*
-
 ## **2 |** Programstruktur
 
 #### **2.1 |** Klasser och ansvarsområden.  
-
-Vi delade upp spelet i separata klasser med olika ansvarsområden:
 
 - `Die` ansvarar för tärningen
 - `Player` hanterar spelaren och poängen
@@ -63,11 +66,7 @@ För att kontrollera att pogrammets inmatning fungerade som förväntat genomfö
 
 #### **5.1 |** Genomförda tester
 
-Manuella tester genomfördes genom att mata in olika värden i terminalen för att kontrollera programmets validering. 
-
-Vi testade exempelvis att skriva in en siffra där text skulle anges (spelarens namn), att ange 0 när programmet bad oss välja ett nummer mellan 1-100 samt att skriva ett tal med bokstäver istället för siffror. 
-
-Testerna visade att programmet kunde hantera felaktig inmatning och ge användaren möjlighet att korrigera sina svar utan att behöva starta om programmet. 
+Manuella tester genomfördes genom att mata in olika värden i terminalen för att kontrollera programmets validering. Vi testade exempelvis att skriva in en siffra där text skulle anges (spelarens namn), att ange 0 när programmet bad oss välja ett nummer mellan 1-100 samt att skriva ett tal med bokstäver istället för siffror. Testerna visade att programmet kunde hantera felaktig inmatning och ge användaren möjlighet att korrigera sina svar utan att behöva starta om programmet. 
 
 #### **5.2 |** Problem och lösningar
 
@@ -75,9 +74,6 @@ Under utvecklingen upptäckte vi att programmet kunde krascha om användaren skr
 
 ## **6 |** Användning av AI
 
-AI har använts som ett stöd under projektets gång genom att bland annat hjälpa till att formulera issues i GitHub samt resonera kring olika lösningar och logik i koden.
-
-AI har också varit ett stöd vid utformningen och strukturen av projektdokumentationen.
-
-AI har fungerat som ett kompletterande verktyg och har underlättat både utvecklingsarbetet och lärandet. Det har samtidigt varit viktigt att kritiskt granska de förslag som AI har gett och testa dem innan de implementerats i koden. Det är viktigt att själv förstå hur koden fungerar och inte förutsätta att ett förslag från AI automatiskt är korrekt. 
-
+- AI har använts som ett stöd under projektets gång genom att bland annat hjälpa till att formulera issues i GitHub samt resonera kring olika lösningar och logik i koden.
+- AI har också varit ett stöd vid utformningen och strukturen av projektdokumentationen.
+- AI har fungerat som ett kompletterande verktyg och har underlättat både utvecklingsarbetet och lärandet. Det har samtidigt varit viktigt att kritiskt granska de förslag som AI har gett och testa dem innan de implementerats i koden. Det är viktigt att själv förstå hur koden fungerar och inte förutsätta att ett förslag från AI automatiskt är korrekt. 
