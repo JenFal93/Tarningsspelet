@@ -67,31 +67,43 @@ public class PigGame {
 
         // Skapa en tillfällig pott för spelarens turn
         int turnPot = 0;
+        boolean keepRolling = true;
 
         // Visa vilken spelares tur det är
         System.out.println("\n" + player.getName() + "'s turn!");
 
-        // Slå spelarens tärning
-        player.rollDice();
+        while (keepRolling) {
+            // Slå spelarens tärning
+            player.rollDice();
 
-        // Hämta tärningens värde
-        int diceValue = player.getDieValue();
+            // Hämta tärningens värde
+            int diceValue = player.getDieValue();
 
-        // Visa tärningsresultatet
-        System.out.println("Dice rolled: " + diceValue);
+            // Visa tärningsresultatet
+            System.out.println("Dice rolled: " + diceValue);
 
-        // Kontrollera om spelaren slog en etta
-        if (diceValue == LOSING_ROLL) {
-            turnPot = 0;
-            System.out.println("OH NO! You rolled a 1 and lost your turn pot!");
-        } else {
-            // Lägg till tärningsvärdet i den tillfälliga potten
-            turnPot += diceValue;
+            // Kontrollera om spelaren slog en etta
+            if (diceValue == LOSING_ROLL) {
+                turnPot = 0;
+                System.out.println("OH NO! You rolled a 1 and lost your turn pot!");
+            } else {
+                // Lägg till tärningsvärdet i den tillfälliga potten
+                turnPot += diceValue;
+
+                // Visa aktuell pot och spelarens totalpoäng
+                System.out.println("Turn pot: " + turnPot);
+                System.out.println("Total score: " + player.getScore());
+
+                int choice = input.readInt("Roll again (1) or Hold (2)? ", 1, 2);
+
+                if (choice == 2) {
+                    player.addScore(turnPot);
+                    System.out.println("Banked " + turnPot + " points!");
+                    System.out.println("Total score: " + player.getScore());
+                    keepRolling = false;
+                }
+            }
         }
-
-        // Visa aktuell pot och spelarens totalpoäng
-        System.out.println("Turn pot: " + turnPot);
-        System.out.println("Total score: " + player.getScore());
     }
 
 
