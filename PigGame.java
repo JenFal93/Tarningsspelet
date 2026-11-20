@@ -8,7 +8,7 @@ public class PigGame {
 
     private static final int DICE_SIDES = 6; // satt antal sidor
 
-    private static final int WINNING_SCORE = 100;
+    private static final int WINNING_SCORE = 20;
     private static final int LOSING_ROLL = 1; // förlorar tillfällig pott
 
     // Skapa ett InputHandler-objekt för att läsa inmatning från terminalen
@@ -16,22 +16,42 @@ public class PigGame {
 
     public static void main(String[] args) {
 
+        // Visa ett välkomstmeddelande till spelaren
+        System.out.println("🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽");
+        System.out.println("\n            welcome to the              ");
+        System.out.println("         🐷 P I G - g a m e 🐷           ");
+        System.out.println("\n🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽🐽");
+
+
         // Initiera spelare och spelinställningar
         ArrayList<Player> players = initialize();
 
-        // DEBUG: Kontrollera att spelarna skapats
-        for (Player player : players) {
-            // System.out.println("Created player: " + player.getName());
-            takeTurn(player);
+        // Fortsätt spela tills att någon når 100
+        boolean gameOver = false;
+        while (!gameOver) {
+
+            // Starta spelets turordning
+            for (Player player : players) {
+                // System.out.println("Created player: " + player.getName());
+                takeTurn(player);
+
+                // Kontrollera om spelaren har vunnit
+                if (player.getScore() >= WINNING_SCORE) {
+                    System.out.println("\n" + "🏆 " + player.getName() + " wins! 🐷🎉");
+                    // Avsluta spelet när en spelare når 100 poäng
+                    gameOver = true;
+                    break;
+                }
+            }
+            
         }
 
-        // TODO: Starta spelets turordning
-        // TODO: Avsluta spelet när en spelare når 100 poäng
+        
 
         // Stäng InputHandler när spelet är färdigt
         input.close();
     }
-    
+
     // Skapa spelarna och tilldela varsin 6-sidig tärning
     private static ArrayList<Player> initialize() {
 
@@ -40,7 +60,7 @@ public class PigGame {
 
         // Läs in antalet spelare
         int numberOfPlayers = input.readInt(
-            "Number of players (" + MIN_PLAYERS + "-" + MAX_PLAYERS + "): ", MIN_PLAYERS, MAX_PLAYERS
+            "\nNumber of players (" + MIN_PLAYERS + "-" + MAX_PLAYERS + "): ", MIN_PLAYERS, MAX_PLAYERS
         );
 
         // Skapa spelarna och tilldela deras tärningar
@@ -86,9 +106,18 @@ public class PigGame {
             if (diceValue == LOSING_ROLL) {
                 turnPot = 0;
                 System.out.println("OH NO! You rolled a 1 and lost your turn pot!");
+                keepRolling = false; // får inte fortsätta spela
             } else {
                 // Lägg till tärningsvärdet i den tillfälliga potten
                 turnPot += diceValue;
+
+                // Kontrollera om spelaren nått vinstpoängen
+                if (player.getScore() + turnPot >= WINNING_SCORE) {
+                    player.addScore(turnPot);
+                    System.out.println("Total score: " + player.getScore());
+                    keepRolling = false;
+                    break;
+                }
 
                 // Visa aktuell pot och spelarens totalpoäng
                 System.out.println("Turn pot: " + turnPot);
@@ -105,7 +134,4 @@ public class PigGame {
             }
         }
     }
-
-
-    // TODO: Kontrollera om en spelare har vunnit
 }
